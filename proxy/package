@@ -1,0 +1,3 @@
+#!/bin/bash
+
+zip deploy.zip -@ < zip.lst
