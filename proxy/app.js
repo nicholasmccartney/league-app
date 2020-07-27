@@ -21,11 +21,31 @@ app.get("/:page", (req, res) => {
 });
 
 app.get("/summoner/:summoner", (req, res) => {
-  var url = `/lol/summoner/v4/summoners/by-name/${req.params.summoner}`;
+  var summonerUrl = `/lol/summoner/v4/summoners/by-name/${req.params.summoner}`;
   instance
-    .get(url)
+    .get(summonerUrl)
     .then(function (response) {
-      res.json(response.data);
+      var accountData = {
+        'id': response.data.id,
+        'accountId': response.data.accountId,
+        'puuid': response.data.puuid,
+        'name': response.data.name,
+        'profileIconId': response.data.profileIconId,
+        'revisionDate': response.data.revisionDate,
+        'summonerLevel': response.data.summonerLevel,
+      }
+
+      var matchListUrl = `/lol/match/v4/matchlists/by-account/${accountData.accountId}`;
+
+      instance
+        .get(matchListUrl)
+        .then(function(response2) {
+          accountData['matches'] = response2.data.matches
+          res.json(accountData)
+        })
+        .catch(function(error) {
+          console.log(error)
+        })
     })
     .catch(function (error) {
       console.log(error);

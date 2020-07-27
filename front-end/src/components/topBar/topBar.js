@@ -20,7 +20,7 @@ class Topbar extends Component {
 
 
     runQuery(`/summoner/${summonerName}`).then(data => {
-        this.props.storeData({summonerName: data.name, summonerId: data.id})
+      this.props.storeData(data)
     })
   };
 

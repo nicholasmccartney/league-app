@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { runQuery } from '../../config/api'
 import Topbar from '../../components/topBar/topBar'
+import Summoner from '../summoner/summoner'
 
 
 class Homepage extends Component {
@@ -11,28 +12,39 @@ class Homepage extends Component {
             pageTitle: 'Homepage',
             summonerName: null,
             summonerId: null,
+            currentSummoner: null,
         }
     }
 
     storeData = (data) => {
-        console.log(data)
         this.setState({
-            summonerName: data.summonerName,
-            summonerId: data.summonerId
+            currentSummoner: data,
         })
         console.log(this.state)
     }
 
     render() {
-        return (
-            <div>
-                <Topbar storeData={this.storeData}/>
-                {this.state.summonerName}
+        if (this.state.currentSummoner == null) {
+            return (
+                <div>
+                    <Topbar storeData={this.storeData}/>
+                </div>
+            )
+        } else {
+            return (
+              <div>
+                <Topbar storeData={this.storeData} />
+                <div>
+                    
+                </div>
+
+                {this.state.currentSummoner.name}
                 <br/>
-                {this.state.summonerId}
-            </div>
-        )
-    }
+                {this.state.currentSummoner.summonerLevel}
+              </div>
+            );
+        }
+        }
 
 }
 
