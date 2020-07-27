@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { runQuery } from '../../config/api'
 import Topbar from '../../components/topBar/topBar'
 import Summoner from '../summoner/summoner'
+import Help from '../help/help'
 
 
 class Homepage extends Component {
@@ -35,7 +36,7 @@ class Homepage extends Component {
               <div>
                 <Topbar storeData={this.storeData} />
                 <div>
-                    
+
                 </div>
 
                 {this.state.currentSummoner.name}
