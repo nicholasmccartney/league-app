@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { runQuery } from "../../config/api";
+import { runQuery } from "../../util/api";
 
 import "./topBar.css";
 

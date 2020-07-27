@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { runQuery } from '../../config/api'
+import { runQuery } from '../../util/api'
 import Topbar from '../../components/topBar/topBar'
 import Summoner from '../summoner/summoner'
 import Help from '../help/help'
@@ -35,13 +35,7 @@ class Homepage extends Component {
             return (
               <div>
                 <Topbar storeData={this.storeData} />
-                <div>
-
-                </div>
-
-                {this.state.currentSummoner.name}
-                <br/>
-                {this.state.currentSummoner.summonerLevel}
+                <Summoner currentSummoner={this.state.currentSummoner}/>
               </div>
             );
         }

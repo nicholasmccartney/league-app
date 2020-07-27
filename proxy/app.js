@@ -2,10 +2,13 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
+const api_key = "RGAPI-af53d377-8eda-4979-acda-3d2ebc0b2614";
+
 const instance = axios.create({
   baseURL: "https://na1.api.riotgames.com",
   headers: {
-    "X-Riot-Token": process.env.RIOT_API_TOKEN,
+    //"X-Riot-Token": process.env.RIOT_API_TOKEN,
+    "X-Riot-Token": api_key,
   },
 });
 
@@ -51,6 +54,15 @@ app.get("/summoner/:summoner", (req, res) => {
       console.log(error);
     });
 });
+
+app.get('/match/:matchId', (req, res) => {
+  var url = `/lol/match/v4/matches/${req.params.matchId}`;
+  console.log(url)
+  instance.get(url)
+    .then(function(response) {
+      res.json(response.data)
+    })
+})
 
 const PORT = process.env.PORT || 80;
 app.listen(PORT, () => console.log(`listening on ${PORT}`));

@@ -1,0 +1,30 @@
+.summoner {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.summonerName {
+    display: flex;
+    justify-content: center;
+}
+
+.summonerTest {
+    background-color: thistle;
+    height: 100%;
+    width: 100%;
+}
+
+.recentChamp {
+    max-width: 85%;
+    max-height: 480;
+    opacity: 75%;
+}
+
+.profileIcon {
+    margin-top: 5px;
+    margin-right: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 25px;
+}
