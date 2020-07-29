@@ -3,3 +3,36 @@
     height: 100%;
     width: 100%;
 }
+
+.matchHistoryPane {
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.matchHistoryItemContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.matchHistoryItem {
+    background-color: slategray;
+    width: 75%;
+    height: 75px;
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.getMoreMatches {
+    border: 1px solid gray;
+    border-radius: 5px;
+    height: 25px;
+    margin: 5px 5px 5px 0px;
+}

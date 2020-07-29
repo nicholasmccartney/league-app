@@ -14,9 +14,8 @@ class SummonerSummary extends Component {
   }
 
   componentWillMount() {
-    var recentMatches = this.state.matches.slice(0, 10);
+    var recentMatches = this.state.matches.slice(0, 5);
 
-    console.log(recentMatches)
 
     var recentMatchesHTML = [];
     recentMatches.map((match) => {
@@ -29,14 +28,20 @@ class SummonerSummary extends Component {
   }
 
   render() {
-    return (
-        <div className="summaryTest">
-            Recent Matches
-            <div className="recentMatchesContainer">
+      if (this.state.recentMatchesHTML.length < 5) {
+          return (
+              null
+          )
+      } else {
+          return (
+            <div className="summaryTest">
+              Recent Matches
+              <div className="recentMatchesContainer">
                 {this.state.recentMatchesHTML}
+              </div>
             </div>
-        </div>
-    )
+          );
+      }
   }
 }
 

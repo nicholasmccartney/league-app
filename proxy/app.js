@@ -2,12 +2,10 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
-
-
 const instance = axios.create({
   baseURL: "https://na1.api.riotgames.com",
   headers: {
-    //"X-Riot-Token": process.env.RIOT_API_TOKEN,
+    "X-Riot-Token": process.env.RIOT_API_TOKEN,
   },
 });
 

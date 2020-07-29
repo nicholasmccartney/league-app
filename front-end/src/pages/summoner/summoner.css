@@ -1,6 +1,5 @@
 .summoner {
     display: flex;
-    justify-content: space-evenly;
     align-content: center;
 }
 
@@ -12,7 +11,7 @@
 .summonerTest {
     background-color: thistle;
     height: 100%;
-    width: 100%;
+    width: 50%;
 }
 
 .recentChamp {

@@ -3,15 +3,17 @@ import { runQuery } from "../../util/api";
 import { findParticipantId, findRecentGameChamp } from "../../util/matches";
 import { champIdToName } from "../../util/championID";
 
-import "./matchSummary.css";
+import "./matchHistory.css";
 
-class MatchSummary extends Component {
+class MatchHistoryItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ...props.data,
+      mostRecentMatch: null,
+      matchesHTML: null,
       kda: null,
       champion: null,
+      ...props.data,
     };
   }
 
@@ -38,7 +40,7 @@ class MatchSummary extends Component {
   render() {
     if (this.state.champion !== null && this.state.kda !== null) {
       return (
-        <div>
+        <div className="matchHistoryItem">
           {this.state.champion !== null && (
             <img
               className="champTile"
@@ -57,4 +59,4 @@ class MatchSummary extends Component {
   }
 }
 
-export default MatchSummary;
+export default MatchHistoryItem;

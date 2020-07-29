@@ -33,17 +33,25 @@ class Summoner extends Component {
   };
 
   render() {
-    let champ = this.state.recentChampion
-    console.log(this.state)
     return (
       <div className="summoner">
         <div className="summonerTest">
           <div className="summonerName">
-            <img className='profileIcon' src={require(`../../resources/images/profileicon/${this.state.profileIconId}.png`)} alt='summonerProfileIcon'/>
+            <img
+              className="profileIcon"
+              src={require(`../../resources/images/profileicon/${this.state.profileIconId}.png`)}
+              alt="summonerProfileIcon"
+            />
             <h3>{this.state.name}</h3>
           </div>
-          {champ != null && <img className='recentChamp' alt={`${champ} splash`} src={require(`../../resources/images/champion/splash/${champ}_0.jpg`)}/>}
-          <SummonerSummary data={this.state}/>
+          {this.state.recentChampion != null && (
+            <img
+              className="recentChamp"
+              alt={`${this.state.recentChampion} splash`}
+              src={require(`../../resources/images/champion/splash/${this.state.recentChampion}_0.jpg`)}
+            />
+          )}
+          <SummonerSummary data={this.state} />
         </div>
         <MatchHistory storeData={this.storeData} data={this.state} />
       </div>

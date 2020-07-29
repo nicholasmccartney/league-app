@@ -1,5 +1,6 @@
+
 /*
-    utility function taken from https://github.com/Najsr/League-Of-Legends-Champions-ID-List/blob/master/list.php and modified for javascript
+    utilityfunction taken from https://github.com/Najsr/League-Of-Legends-Champions-ID-List/blob/master/list.php and modified for javascript
 */
 export function champIdToName(id) {
     switch (id) {
