@@ -21,7 +21,7 @@ class Help extends Component {
 
             <div class="images">
             <figure>
-                <img src="SRift.png" style="width: 35vw; min-width: 330px;" />
+                <img src="../../resources/images/help/SRift.png" style="width: 35vw; min-width: 330px;" />
                 <div style='width: 720px; text-align: center;'><small>Summoner’s Rift. The bottom left side is the Blue side and the top right is the Red side.</small></div>
             </figure>
             </div>
@@ -31,21 +31,21 @@ class Help extends Component {
 
             <div class="images">
             <figure>
-                <img src="Nexus.png" style="width: 20vw; min-width: 330px;"/>
+                <img src="../../resources/images/help/Nexus.png" style="width: 20vw; min-width: 330px;"/>
                 <div style='width: 380px; text-align: center;'><small>The Nexus cannot be damaged until the towers protecting it are destroyed.</small></div>
             </figure>
             </div>
 
             <div class="images">
             <figure>
-                <img src="Tower.png" style="width: 20vw; min-width: 330px;"/>
+                <img src="../../resources/images/help/Tower.png" style="width: 20vw; min-width: 330px;"/>
                 <div style='width: 380px; text-align: center;'><small>Towers shoot at enemies within range.</small></div>
             </figure>
             </div>
 
             <div class="images">
             <figure>
-                <img src="Minions.png" style="width: 20vw; min-width: 330px;" />
+                <img src="../../resources/images/help/Minions.png" style="width: 20vw; min-width: 330px;" />
                 <div style='width: 380px; text-align: center;'><small>Minions travel down lanes and attack towers.</small></div>
             </figure>
             </div>
@@ -54,7 +54,7 @@ class Help extends Component {
 
             <div class="images">
             <figure>
-                <img src="Lanes.png" style="width: 35vw; min-width: 330px;" />
+                <img src="../../resources/images/help/Lanes.png" style="width: 35vw; min-width: 330px;" />
             </figure>
             </div>
 
