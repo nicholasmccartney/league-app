@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import MatchHistory from "../../components/matchHistory/matchHistory";
+import SummonerSummary from '../../components/summonerSummary/summonerSummary';
 import { runQuery } from "../../util/api";
+import { champIdToName } from '../../util/championID'
 
 import "./summoner.css";
 import champions from "../../resources/champions/champion.json";
@@ -18,53 +20,16 @@ class Summoner extends Component {
 
   componentWillMount() {
     var recentMatch = this.state.matches[0];
-    var matchId = recentMatch.gameId;
 
-    runQuery(`/match/${matchId}`)
-      .then((data) => {
-        this.setState({
-          mostRecentMatch: data,
-        });
-        var recentParticipantId = this.findParticipantId();
-        var champ = this.findRecentGameChamp(recentParticipantId);
-        this.setState({
-          recentChampion: champ
-        })
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.setState({
+      recentChampion: champIdToName(recentMatch.champion)
+    })
   }
-
-  findParticipantId = () => {
-    var summonerName = this.state.name;
-    var participantId = null;
-    this.state.mostRecentMatch.participantIdentities.forEach((summoner) => {
-      if (summoner.player.summonerName === summonerName) {
-        participantId = summoner.participantId;
-      }
-    });
-    return participantId;
-  };
-
-  findRecentGameChamp = (id) => {
-    var recentMatch = this.state.mostRecentMatch;
-    var participant = recentMatch.participants[id - 1];
-    var champId = participant.championId;
-
-    for (const champ in this.state.championData) {
-      var currentChamp = this.state.championData[champ];
-      if (parseInt(currentChamp.key, 10) === champId) {
-        return currentChamp;
-      }
-    }
-  };
 
   storeData = (data) => {
     this.setState({
       ...data,
     });
-    console.log(this.state);
   };
 
   render() {
@@ -77,7 +42,8 @@ class Summoner extends Component {
             <img className='profileIcon' src={require(`../../resources/images/profileicon/${this.state.profileIconId}.png`)} alt='summonerProfileIcon'/>
             <h3>{this.state.name}</h3>
           </div>
-          {champ != null && <img className='recentChamp' alt={`${champ.id} splash`} src={require(`../../resources/images/champion/splash/${champ.id}_0.jpg`)}/>}
+          {champ != null && <img className='recentChamp' alt={`${champ} splash`} src={require(`../../resources/images/champion/splash/${champ}_0.jpg`)}/>}
+          <SummonerSummary data={this.state}/>
         </div>
         <MatchHistory storeData={this.storeData} data={this.state} />
       </div>

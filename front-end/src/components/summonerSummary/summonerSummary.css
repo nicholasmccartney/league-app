@@ -1,0 +1,9 @@
+.summaryTest {
+    background-color: tomato;
+}
+
+.recentMatchesContainer {
+    display: flex;
+    justify-content: space-evenly;
+
+}

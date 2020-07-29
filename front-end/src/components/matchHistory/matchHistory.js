@@ -13,31 +13,29 @@ class MatchHistory extends Component {
   }
 
   findParticipantId = () => {
-    var summonerName = this.state.name
-    var participantId = null
-    this.state.mostRecentMatch.participantIdentities.forEach(summoner => {
+    var summonerName = this.state.name;
+    var participantId = null;
+    this.state.mostRecentMatch.participantIdentities.forEach((summoner) => {
       if (summoner.player.summonerName === summonerName) {
         participantId = summoner.participantId;
       }
     });
-    return participantId
-  }
-
+    return participantId;
+  };
   findRecentGameChamp = (id) => {
-    var recentMatch = this.state.mostRecentMatch
-    var participant = recentMatch.participants[id - 1]
-    var champId = participant.championId
-  }
-  
+    var recentMatch = this.state.mostRecentMatch;
+    var participant = recentMatch.participants[id - 1];
+    var champId = participant.championId;
+    for (const champ in this.state.championData) {
+      var currentChamp = this.state.championData[champ];
+      if (parseInt(currentChamp.key, 10) === champId) {
+        return currentChamp;
+      }
+    }
+  };
 
   render() {
-    
-    return (
-      <div className="test">
-        match history
-        </div>
-      
-    ) 
+    return <div className="test">match history</div>;
   }
 }
 
