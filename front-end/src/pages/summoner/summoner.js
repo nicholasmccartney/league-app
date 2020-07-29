@@ -35,7 +35,7 @@ class Summoner extends Component {
   render() {
     return (
       <div className="summoner">
-        <div className="summonerTest">
+        <div className="summonerSummary">
           <div className="summonerName">
             <img
               className="profileIcon"

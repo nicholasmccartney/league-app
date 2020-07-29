@@ -120,7 +120,7 @@ export function champIdToName(id) {
         case 6: return "Urgot";
         case 203: return "Kindred";
         case 21: return "Miss Fortune";
-        case 62: return "Wukong";
+        case 62: return "Monkey King";
         case 53: return "Blitzcrank";
         case 98: return "Shen";
         case 201: return "Braum";

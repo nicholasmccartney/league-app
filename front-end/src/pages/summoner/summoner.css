@@ -9,7 +9,9 @@
 }
 
 .summonerTest {
-    background-color: thistle;
+    background-color: rgba(40, 44, 52, 0.8);
+    border-radius: 15px;
+    margin-left: 5px;
     height: 100%;
     width: 50%;
 }
