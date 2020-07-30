@@ -2,13 +2,11 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
-var token = "RGAPI-87271ba2-457f-4710-a4d2-f1d41bca1c24"
 
 const instance = axios.create({
   baseURL: "https://na1.api.riotgames.com",
   headers: {
-    //"X-Riot-Token": process.env.RIOT_API_TOKEN,
-    "X-Riot-Token": token,
+    "X-Riot-Token": process.env.RIOT_API_TOKEN
   },
 });
 
