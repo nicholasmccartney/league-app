@@ -72,6 +72,7 @@ class Homepage extends Component {
         <div>
           <Topbar storeData={this.storeData} />
           <Summoner currentSummoner={this.state.currentSummoner} />
+          <br/><br/>
           <Popup
             trigger={<p className="link">What is League of Legends?</p>}
             closeOnDocumentClick
