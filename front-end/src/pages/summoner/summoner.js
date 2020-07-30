@@ -14,16 +14,56 @@ class Summoner extends Component {
       mostRecentMatch: null,
       championData: champions.data,
       recentChampion: null,
+      displayRank: "",
       ...props.currentSummoner,
     };
   }
 
   componentWillMount() {
-    var recentMatch = this.state.matches[0];
+    
+    var champPlayCount = {}
+    
+    this.state.matches.map((match) => {
+      var championName = champIdToName(match.champion)
+      if (!champPlayCount[championName]) {
+        champPlayCount[championName] = 1;
+      } else {
+        champPlayCount[championName] = champPlayCount[championName] + 1
+      }
+    })
+
+    var sortable = []
+    for (var champion in champPlayCount) {
+      sortable.push([champion, champPlayCount[champion]])
+    }
+
+    sortable.sort((a,b) => b[1] - a[1])
 
     this.setState({
-      recentChampion: champIdToName(recentMatch.champion)
+      recentChampion: sortable[0][0]
     })
+
+    // get rank
+    var sId = this.state.id
+
+    runQuery(`/rank/${sId}`).then(response => {
+      var ranks = response
+      var displayRank = ""
+      if (ranks.length !== 0) {
+        ranks.forEach((rank) => {
+          if (rank.queueType === "RANKED_SOLO_5x5") {
+            displayRank = rank.tier
+          }
+        })
+        if (displayRank === "") {
+          displayRank = ranks[0].tier
+        }
+      }
+      this.setState({
+        displayRank: displayRank.toLowerCase()
+      })
+    })
+
   }
 
   storeData = (data) => {
@@ -45,11 +85,22 @@ class Summoner extends Component {
             <h3>{this.state.name}</h3>
           </div>
           {this.state.recentChampion != null && (
+            <div style={{position: 'relative'}}>
             <img
               className="recentChamp"
               alt={`${this.state.recentChampion} splash`}
               src={require(`../../resources/images/champion/splash/${this.state.recentChampion}_0.jpg`)}
             />
+            {
+              this.state.displayRank !== "" && (
+                <img
+                  className='rankedEmblem'
+                  src={require(`../../resources/images/ranked-emblems/${this.state.displayRank}.png`)}
+                  alt='rank'
+                  />
+              )
+            }
+            </div>
           )}
           <SummonerSummary data={this.state} />
         </div>

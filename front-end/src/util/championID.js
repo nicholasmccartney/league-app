@@ -50,7 +50,7 @@ export function champIdToName(id) {
         case 134: return "Syndra";
         case 80: return "Pantheon";
         case 92: return "Riven";
-        case 121: return "Kha'Zix";
+        case 121: return "Kha'zix";
         case 42: return "Corki";
         case 268: return "Azir";
         case 51: return "Caitlyn";
@@ -109,7 +109,7 @@ export function champIdToName(id) {
         case 61: return "Orianna";
         case 114: return "Fiora";
         case 9: return "Fiddlesticks";
-        case 31: return "Cho'Gath";
+        case 31: return "Cho'gath";
         case 33: return "Rammus";
         case 7: return "LeBlanc";
         case 16: return "Soraka";
@@ -132,7 +132,7 @@ export function champIdToName(id) {
         case 41: return "Gangplank";
         case 48: return "Trundle";
         case 38: return "Kassadin";
-        case 161: return "Vel'Koz";
+        case 161: return "Vel'koz";
         case 143: return "Zyra";
         case 267: return "Nami";
         case 59: return "Jarvan IV";

@@ -12,7 +12,6 @@ class Topbar extends Component {
   }
 
   fetchData = (e) => {
-    e.preventDefault();
     var summonerName = e.target.summonerName.value;
     this.setState({
       summonerName: summonerName,

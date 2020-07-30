@@ -16,6 +16,13 @@
     width: 50%;
 }
 
+.rankedEmblem {
+    position: absolute;
+    left: 100px;
+    width: 200px;
+    height: 228px;
+}
+
 .recentChamp {
     max-width: 85%;
     max-height: 480;

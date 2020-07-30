@@ -69,7 +69,6 @@ class MatchHistory extends Component {
   }
 
   render() {
-    console.log(this.state.matchesHTML)
     return (
     <div className="matchHistoryPane">
       <h3>Match History</h3>

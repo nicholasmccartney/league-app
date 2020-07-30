@@ -2,10 +2,13 @@ const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
 
+var token = "RGAPI-87271ba2-457f-4710-a4d2-f1d41bca1c24"
+
 const instance = axios.create({
   baseURL: "https://na1.api.riotgames.com",
   headers: {
-    "X-Riot-Token": process.env.RIOT_API_TOKEN,
+    //"X-Riot-Token": process.env.RIOT_API_TOKEN,
+    "X-Riot-Token": token,
   },
 });
 
@@ -54,10 +57,21 @@ app.get("/summoner/:summoner", (req, res) => {
 
 app.get('/match/:matchId', (req, res) => {
   var url = `/lol/match/v4/matches/${req.params.matchId}`;
-  console.log(url)
   instance.get(url)
     .then(function(response) {
       res.json(response.data)
+    })
+})
+
+app.get('/rank/:sId', (req, res) => {
+  var url = `/lol/league/v4/entries/by-summoner/${req.params.sId}`
+  instance.get(url)
+    .then(function(response) {
+      console.log(response)
+      res.json(response.data)
+    })
+    .catch(function(error) {
+      console.log(error)
     })
 })
 
