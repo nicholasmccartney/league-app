@@ -48,6 +48,8 @@ class MatchHistoryItem extends Component {
       csTip =
         "Congratulations! Your farm is consistent with Diamond players!  You made it!";
     }
+
+    return csTip;
   };
 
   cpm = (time) => {
@@ -64,6 +66,8 @@ class MatchHistoryItem extends Component {
     runQuery(`/match/${match.gameId}`).then((response) => {
       var participantId = findParticipantId(name, response);
       var participant = response.participants[participantId - 1];
+      var cpm = this.cpm(participant.timeline).toFixed(2)
+      var creepTip = this.creepChecker(cpm)
       this.setState({
         kda: {
           kills: participant.stats.kills,
@@ -73,7 +77,8 @@ class MatchHistoryItem extends Component {
         champion: champ,
         cs: participant.stats.totalMinionsKilled,
         vs: participant.stats.visionScore,
-        cpm: this.cpm(participant.timeline).toFixed(2)
+        cpm: cpm,
+        creepTip: creepTip,
       });
     });
   }
@@ -104,6 +109,7 @@ class MatchHistoryItem extends Component {
             Vision Score: <br/>
             {this.state.vs}
           </div>
+          {this.state.creepTip}
         </div>
       );
     } else {
