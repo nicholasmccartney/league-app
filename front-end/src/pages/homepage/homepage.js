@@ -39,10 +39,8 @@ class Homepage extends Component {
               </div>
             );
         }
-    }
+        }
 
 }
-
-<a href="../help/help.js"></a>
 
 export default Homepage;
