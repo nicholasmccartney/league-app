@@ -1,12 +1,11 @@
-import React, { Component } from 'react';
-import { runQuery } from '../../util/api'
-import Topbar from '../../components/topBar/topBar'
-import MatchHistoryItem from '../../components/matchHistory/matchHistoryItem'
-import Summoner from '../summoner/summoner'
-import Help from '../help/help'
+import React, { Component } from "react";
+import { runQuery } from "../../util/api";
+import Topbar from "../../components/topBar/topBar";
+import Summoner from "../summoner/summoner";
+import Help from "../help/help";
+import Popup from "reactjs-popup";
 
-import './homepage.css'
-
+import "./homepage.css";
 
 class Homepage extends Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class Homepage extends Component {
       this.storeData(data);
     });
   };
-    
+
   render() {
     if (this.state.currentSummoner == null) {
       return (
@@ -57,7 +56,15 @@ class Homepage extends Component {
               Search
             </button>
           </form>
-          <a href="../help/help.js"></a>
+          <Popup
+            trigger={<p className="link">What is League of Legends?</p>}
+            closeOnDocumentClick
+            contentStyle={{
+              width: "80%",
+            }}
+          >
+            <Help />
+          </Popup>
         </div>
       );
     } else {
@@ -65,7 +72,15 @@ class Homepage extends Component {
         <div>
           <Topbar storeData={this.storeData} />
           <Summoner currentSummoner={this.state.currentSummoner} />
-          <a href="../help/help.js"></a>
+          <Popup
+            trigger={<p className="link">What is League of Legends?</p>}
+            closeOnDocumentClick
+            contentStyle={{
+              width: "80%",
+            }}
+          >
+            <Help />
+          </Popup>
         </div>
       );
     }
@@ -73,33 +88,3 @@ class Homepage extends Component {
 }
 
 export default Homepage;
-
-//render() {
-//        return (
-//            <div>
-//                <MatchHistoryItem/>
-//                    <Topbar storeData={this.storeData}/>
-//                    {this.state.summonerName}
-//                    <br/>
-//                    {this.state.summonerId}
-//            </div>
-//        )
-//    }
-//        if (this.state.currentSummoner == null) {
-//            return (
-//                <div>
-//                    <Topbar storeData={this.storeData}/>
-//                    <a href="../help/help.js"></a>
-//                </div>
-//            )
-//        } else {
-//            return (
-//              <div>
-//                <Topbar storeData={this.storeData} />
-//                <Summoner currentSummoner={this.state.currentSummoner}/>
-//                <a href="../help/help.js"></a>
-//              </div>
-//            );
-//        }
-//        }
-//

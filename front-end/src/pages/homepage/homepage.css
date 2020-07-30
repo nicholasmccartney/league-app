@@ -11,6 +11,12 @@
     flex-direction: column;
 }
 
+p.link {
+    font-family: 'FiraSans';
+    color: blue;
+    text-decoration: underline;
+}
+
 img.child {
     align-self: center;
     margin-top: 5%;
