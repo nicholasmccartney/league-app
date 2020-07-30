@@ -40,6 +40,7 @@ class Homepage extends Component {
             return (
                 <div>
                     <Topbar storeData={this.storeData}/>
+                    <a href="../help/help.js"></a>
                 </div>
             )
         } else {
@@ -47,6 +48,7 @@ class Homepage extends Component {
               <div>
                 <Topbar storeData={this.storeData} />
                 <Summoner currentSummoner={this.state.currentSummoner}/>
+                <a href="../help/help.js"></a>
               </div>
             );
         }
