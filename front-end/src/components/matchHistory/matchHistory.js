@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import MatchHistoryItem from '../matchHistory/matchHistoryItem'
-import { runQuery } from '../../util/api'
+import { runQuery } from "../../util/api"
 
 import "./matchHistory.css";
 

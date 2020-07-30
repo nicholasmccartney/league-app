@@ -36,35 +36,7 @@ class Homepage extends Component {
       this.storeData(data);
     });
   };
-    render() {
-        return (
-            <div>
-                <MatchHistoryItem/>
-                    <Topbar storeData={this.storeData}/>
-                    {this.state.summonerName}
-                    <br/>
-                    {this.state.summonerId}
-            </div>
-        )
-    }
-        if (this.state.currentSummoner == null) {
-            return (
-                <div>
-                    <Topbar storeData={this.storeData}/>
-                    <a href="../help/help.js"></a>
-                </div>
-            )
-        } else {
-            return (
-              <div>
-                <Topbar storeData={this.storeData} />
-                <Summoner currentSummoner={this.state.currentSummoner}/>
-                <a href="../help/help.js"></a>
-              </div>
-            );
-        }
-        }
-
+    
   render() {
     if (this.state.currentSummoner == null) {
       return (
@@ -101,3 +73,33 @@ class Homepage extends Component {
 }
 
 export default Homepage;
+
+//render() {
+//        return (
+//            <div>
+//                <MatchHistoryItem/>
+//                    <Topbar storeData={this.storeData}/>
+//                    {this.state.summonerName}
+//                    <br/>
+//                    {this.state.summonerId}
+//            </div>
+//        )
+//    }
+//        if (this.state.currentSummoner == null) {
+//            return (
+//                <div>
+//                    <Topbar storeData={this.storeData}/>
+//                    <a href="../help/help.js"></a>
+//                </div>
+//            )
+//        } else {
+//            return (
+//              <div>
+//                <Topbar storeData={this.storeData} />
+//                <Summoner currentSummoner={this.state.currentSummoner}/>
+//                <a href="../help/help.js"></a>
+//              </div>
+//            );
+//        }
+//        }
+//
