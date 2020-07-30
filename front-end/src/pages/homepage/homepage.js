@@ -35,6 +35,24 @@ class Homepage extends Component {
       this.storeData(data);
     });
   };
+    render() {
+        if (this.state.currentSummoner == null) {
+            return (
+                <div>
+                    <Topbar storeData={this.storeData}/>
+                    <a href="../help/help.js"></a>
+                </div>
+            )
+        } else {
+            return (
+              <div>
+                <Topbar storeData={this.storeData} />
+                <Summoner currentSummoner={this.state.currentSummoner}/>
+                <a href="../help/help.js"></a>
+              </div>
+            );
+        }
+        }
 
   render() {
     if (this.state.currentSummoner == null) {
@@ -56,6 +74,7 @@ class Homepage extends Component {
               Search
             </button>
           </form>
+          <a href="../help/help.js"></a>
         </div>
       );
     } else {
@@ -63,6 +82,7 @@ class Homepage extends Component {
         <div>
           <Topbar storeData={this.storeData} />
           <Summoner currentSummoner={this.state.currentSummoner} />
+          <a href="../help/help.js"></a>
         </div>
       );
     }
