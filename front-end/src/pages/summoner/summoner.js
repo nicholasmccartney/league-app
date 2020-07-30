@@ -25,10 +25,12 @@ class Summoner extends Component {
     
     this.state.matches.map((match) => {
       var championName = champIdToName(match.champion)
-      if (!champPlayCount[championName]) {
-        champPlayCount[championName] = 1;
-      } else {
-        champPlayCount[championName] = champPlayCount[championName] + 1
+      if (championName != undefined) {
+        if (!champPlayCount[championName]) {
+          champPlayCount[championName] = 1;
+        } else {
+          champPlayCount[championName] = champPlayCount[championName] + 1
+        }
       }
     })
 

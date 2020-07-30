@@ -19,20 +19,22 @@ class MatchSummary extends Component {
     var name = this.props.summonerName;
     var match = this.props.match;
     var champ = champIdToName(match.champion);
-    champ = champ.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "");
+    if (champ !== undefined) {
+      champ = champ.replace(/[^\w\s]|_/g, "").replace(/\s+/g, "");
 
-    runQuery(`/match/${match.gameId}`).then((response) => {
-      var participantId = findParticipantId(name, response);
-      var participant = response.participants[participantId - 1];
-      this.setState({
-        kda: {
-          kills: participant.stats.kills,
-          deaths: participant.stats.deaths,
-          assists: participant.stats.assists,
-        },
-        champion: champ,
+      runQuery(`/match/${match.gameId}`).then((response) => {
+        var participantId = findParticipantId(name, response);
+        var participant = response.participants[participantId - 1];
+        this.setState({
+          kda: {
+            kills: participant.stats.kills,
+            deaths: participant.stats.deaths,
+            assists: participant.stats.assists,
+          },
+          champion: champ,
+        });
       });
-    });
+    }
   }
 
   render() {
