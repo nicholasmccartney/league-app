@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { runQuery } from '../../config/api'
 import Topbar from '../../components/topBar/topBar'
-import MatchHistoryItem from '../../components/matchHistory/matchHistoryItem'
 
 
 class Homepage extends Component {
@@ -27,11 +26,10 @@ class Homepage extends Component {
     render() {
         return (
             <div>
-                <MatchHistoryItem/>
-                    <Topbar storeData={this.storeData}/>
-                    {this.state.summonerName}
-                    <br/>
-                    {this.state.summonerId}
+                <Topbar storeData={this.storeData}/>
+                {this.state.summonerName}
+                <br/>
+                {this.state.summonerId}
             </div>
         )
     }
