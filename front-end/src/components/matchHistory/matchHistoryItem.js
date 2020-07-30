@@ -52,6 +52,10 @@ class MatchHistoryItem extends Component {
     return csTip;
   };
 
+  visionScoreTip = () => {
+      
+  }
+
   cpm = (time) => {
         var creepsPerMin = (time.creepsPerMinDeltas['0-10'] + time.creepsPerMinDeltas['10-20']) / 2;
         return creepsPerMin
