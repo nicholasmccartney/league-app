@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { runQuery } from '../../config/api'
+import { runQuery } from '../../util/api'
 import Topbar from '../../components/topBar/topBar'
 import MatchHistoryItem from '../../components/matchHistory/matchHistoryItem'
+import Summoner from '../summoner/summoner'
+import Help from '../help/help'
 
 
 class Homepage extends Component {
@@ -12,14 +14,13 @@ class Homepage extends Component {
             pageTitle: 'Homepage',
             summonerName: null,
             summonerId: null,
+            currentSummoner: null,
         }
     }
 
     storeData = (data) => {
-        console.log(data)
         this.setState({
-            summonerName: data.summonerName,
-            summonerId: data.summonerId
+            currentSummoner: data,
         })
         console.log(this.state)
     }
@@ -35,6 +36,21 @@ class Homepage extends Component {
             </div>
         )
     }
+        if (this.state.currentSummoner == null) {
+            return (
+                <div>
+                    <Topbar storeData={this.storeData}/>
+                </div>
+            )
+        } else {
+            return (
+              <div>
+                <Topbar storeData={this.storeData} />
+                <Summoner currentSummoner={this.state.currentSummoner}/>
+              </div>
+            );
+        }
+        }
 
 }
 

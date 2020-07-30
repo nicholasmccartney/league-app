@@ -1,0 +1,23 @@
+body {
+    background-image: '../../resources/images/background.jpg';
+  }
+  h1 {
+    text-align:center;
+  }
+  
+  #page-wrap {
+       width: 800px;
+       margin: 0 auto;
+  }
+  
+  .images{
+  text-align:center;
+  margin:50px auto;
+  }
+  
+  .images figure{
+  margin:0px 20px;
+  display:inline-block;
+  text-decoration:none;
+  color:black;
+  }
