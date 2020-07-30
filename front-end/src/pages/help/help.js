@@ -58,7 +58,7 @@ class Help extends Component {
             </figure>
             </div>
 
-            <p><br></br>Summoner’s Rift is split into three lanes and the are between the lanes is called the jungle. There are five common roles that are played: Top, Jungle, Mid, Bot, Support.</p>
+            <p><br></br>Summoner’s Rift is split into three lanes and the area between the lanes is called the jungle. There are five common roles that are played: Top, Jungle, Mid, Bot, Support.</p>
 
             <p><strong><br></br>Top:</strong> This position plays in the Top lane and is typically a 1v1 lane with strong solo fighters or durable tanks.</p>
 
