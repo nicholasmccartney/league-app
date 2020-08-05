@@ -2,7 +2,7 @@ const axios = require('axios')
 
 const instance = axios.create({
   baseURL:
-    "https://leagueoflegendsapp-env.eba-h3i3pvy7.us-east-2.elasticbeanstalk.com/",
+    "http://LeagueAppFix-env.eba-3bztu5yf.us-east-2.elasticbeanstalk.com/",
     //"localhost:80"
 });
 
