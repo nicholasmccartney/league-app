@@ -1,0 +1,38 @@
+.summoner {
+    display: flex;
+    align-content: center;
+}
+
+.summonerName {
+    display: flex;
+    justify-content: center;
+}
+
+.summonerTest {
+    background-color: rgba(40, 44, 52, 0.8);
+    border-radius: 15px;
+    margin-left: 5px;
+    height: 100%;
+    width: 50%;
+}
+
+.rankedEmblem {
+    position: absolute;
+    left: 100px;
+    width: 200px;
+    height: 228px;
+}
+
+.recentChamp {
+    max-width: 85%;
+    max-height: 480;
+    opacity: 75%;
+}
+
+.profileIcon {
+    margin-top: 5px;
+    margin-right: 10px;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 25px;
+}

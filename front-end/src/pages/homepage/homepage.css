@@ -1,0 +1,27 @@
+.logoLarge {
+    font-family: 'FiraSans';   
+    font-size: 500%;   
+    color: gold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+}
+
+p.link {
+    font-family: 'FiraSans';
+    color: blue;
+    text-decoration: underline;
+}
+
+img.child {
+    align-self: center;
+    margin-top: 5%;
+}
+
+div.child {
+    align-self: center;
+}

@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: 'FiraSans';
+  src: local('FiraSans'), url(./resources/fonts/Friz-Quadrata-Font/Friz\ Quadrata\ Regular.ttf) format('woff')
+}
+

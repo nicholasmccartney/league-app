@@ -1,0 +1,37 @@
+body {
+  background-image: "../../resources/images/background.jpg";
+}
+h1 {
+  text-align: center;
+}
+
+.content {
+  width: 90%;
+}
+
+.images {
+  text-align: center;
+  margin: 50px auto;
+}
+
+.images figure {
+  margin: 0px 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+}
+
+.image {
+  width: 35vw;
+  min-width: 330px;
+}
+
+.divLarge {
+  width: 720px;
+  text-align: center;
+}
+
+.divSmall {
+  width: 380px;
+  text-align: center;
+}

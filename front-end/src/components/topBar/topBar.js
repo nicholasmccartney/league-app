@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { runQuery } from "../../config/api";
+import { runQuery } from "../../util/api";
 
 import "./topBar.css";
 
@@ -12,7 +12,6 @@ class Topbar extends Component {
   }
 
   fetchData = (e) => {
-    e.preventDefault();
     var summonerName = e.target.summonerName.value;
     this.setState({
       summonerName: summonerName,
@@ -20,7 +19,7 @@ class Topbar extends Component {
 
 
     runQuery(`/summoner/${summonerName}`).then(data => {
-        this.props.storeData({summonerName: data.name, summonerId: data.id})
+      this.props.storeData(data)
     })
   };
 
