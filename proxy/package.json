@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "aws-sdk": "^2.719.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "node-uuid": "^1.4.8",
